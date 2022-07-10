@@ -5,7 +5,7 @@ $(document).ready(function () {
       $("[name='username']").keyup(function () {
         var words = $(this).val().replace(/_/g, '.');
         
-          console.log(words);
+          console.log("Solving for:",words);
           try {
             var searchWord = words.toLowerCase()
 
@@ -39,16 +39,30 @@ $(document).ready(function () {
       });
     });  
 
-// Help Modal
-  var helpModal = document.getElementById("help-modal");
-  var helpBtn = document.getElementById("help-btn");
-  var helpCloseBtn = document.getElementById("help-modal-close");
+// Usage Modal
+  var usageModal = document.getElementById("usage-modal");
+  var usageBtn = document.getElementById("usage-btn");
+  var usageCloseBtn = document.getElementById("usage-modal-close");
 
-  helpBtn.addEventListener("click", function() {
-    helpModal.style.display = "block";
+  usageBtn.addEventListener("click", function() {
+    usageModal.style.display = "block";
+    aboutModal.style.display = "none";
   });
-  helpCloseBtn.addEventListener("click", function() {
-    helpModal.style.display = "none";
+  usageCloseBtn.addEventListener("click", function() {
+    usageModal.style.display = "none";
+  });
+
+// About Modal
+  var aboutModal = document.getElementById("about-modal");
+  var aboutBtn = document.getElementById("about-btn");
+  var aboutCloseBtn = document.getElementById("about-modal-close");
+
+  aboutBtn.addEventListener("click", function() {
+    aboutModal.style.display = "block";
+    usageModal.style.display = "none";
+  });
+  aboutCloseBtn.addEventListener("click", function() {
+    aboutModal.style.display = "none";
   });
 
 
@@ -57,5 +71,5 @@ var count = document.getElementById("count")
 var input = document.getElementById("input")
 
 input.addEventListener("input", function(e){
-  count.innerHTML = e.target.value.length
+  count.innerHTML = e.target.value.length;
 })
