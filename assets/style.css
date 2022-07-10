@@ -1,50 +1,52 @@
 @font-face {
   font-family: 'MinecraftiaRegular';
-  src: url('../fonts/MinecraftiaRegular.ttf') format('truetype');
+  src: local('sans-serif'), url('../fonts/MinecraftiaRegular.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Roboto-Bold';
-  src: url('../fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+  src: local('sans-serif'), url('../fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Roboto-Thin';
-  src: url('../fonts/Roboto/Roboto-Thin.ttf') format('truetype');
+  src: local('sans-serif'), url('../fonts/Roboto/Roboto-Thin.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Roboto-Light';
-  src: url('../fonts/Roboto/Roboto-Light.ttf') format('truetype');
+  src: local('sans-serif'), url('../fonts/Roboto/Roboto-Light.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Roboto-Medium';
-  src: url('../fonts/Roboto/Roboto-Medium.ttf') format('truetype');
+  src: local('sans-serif'), url('../fonts/Roboto/Roboto-Medium.ttf') format('truetype');
+  font-display: swap;
 }
 
 html body {
   margin: 0;
   padding: 0;
   background-color: #6200ee;
-}
-
-p {
-  font-weight: normal;
-  font-style: normal;
+  text-align: center;
+  align-items: center;
+  align-self: center;
+  justify-content: center
 }
 
 p span {
   font-family: 'Roboto-Light';
   color:#fff;
-  font-weight: normal;
-  font-style: normal;
 }
 
 [type=text] {
   display: block;
-  max-width: 60rem;
-  min-width: 40rem;
+  max-width: 40rem;
+  min-width: 20rem;
   height: 2.5em;
   border-radius: 0.8rem;
   border-color: #000;
@@ -55,62 +57,29 @@ p span {
   display: block;
   margin: 0 auto;
   font-family: 'MinecraftiaRegular'; 
-  font-weight: normal; 
-  font-style: normal; 
 }
 
 ::placeholder {
   color: #aaa;
-  opacity: 1;
   font-family: 'MinecraftiaRegular'; 
-  font-weight: normal; 
-  font-style: normal; 
 }
 
-.navbar {
+.nav {
   display: inline;
   align-items: center;
   align-self: center;
-  background-color: #6200ee;
-  position: fixed;
   font-family: 'Roboto-Medium';
-  font-weight: normal;
-  font-style: normal;
-  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
 }
 
 .navtext {
-  color: white;
+  text-align: center;
+  color: #fff;
+  margin: 0 auto;
 }
 
-.brand img {
-  width: 1rem;
-  height: 1rem;
-  position: relative;
-  top: 0.2rem;
-}
-.nav-container {
-  display: flex;
-  white-space: nowrap;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 20rem;
-  padding-right: 20rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  font-weight: normal;
-  font-style: normal;
-}
-.nav-list {
-  align-items: center;
-}
-
-@media screen and (max-width: 600px) {
-  .nav-links {
-    display: none;
-  }
-
-}
 
 li { 
   list-style: none;
@@ -118,39 +87,33 @@ li {
   padding-left: 2rem;
 }
 
+ul {
+  margin: 0 auto;
+}
+
 a {
   text-decoration: none;
 }
 
-.solver {
-  text-align: center;
-  align-items: center;
-  align-self: center;
-  padding-top: 10rem;
-}
-
 .char_count {
   color: #ddd;
-  text-align: center;
-  align-items: center;
-  align-self: center;
   font-family: 'Roboto-Thin';
-  width: 40em;
-  min-width: 20em;
+  width: 40rem;
+  width: 100%;
+  height: 2.5em;
+  text-align: center;
+  justify-content: center;
+  text-decoration: #000;
+  display: flex;
   margin: 0 auto;
-  padding: 0;
 }
 
 .modal {
   display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 5rem;
+  position: absolute;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: #000;
   background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -179,14 +142,11 @@ a {
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   font-family: 'Roboto-Medium';
-  font-style: normal;
 }
 
 .modal-title {
   font-family: 'Roboto-Bold';
   color: #000;
-  font-weight: normal;
-  font-style: normal;
   margin: 0;
 }
 
@@ -194,7 +154,6 @@ a {
   color: #B00020;
   float: right;
   font-size: 2rem;
-  font-weight: bold;
   margin-top: -0.6rem;
   margin-right: 0.2rem;
   transition: ease 150ms;
@@ -208,12 +167,9 @@ a {
   transition: ease 1500ms;
 }
 
-li :active {
-  color: #ccc;
-}
-
 .result {
   font-family: 'Roboto-Medium';
   color: #fff;
-  font-style: normal;
+  line-height: 90%;
+  margin-top: 1rem;
 }

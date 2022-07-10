@@ -3,6 +3,7 @@
 
 <head>
   <title>Guess the Build Solver</title>
+
   <!-- Meta Tags -->
   <meta charset="UTF-8">
   <meta content="Guess the Build Solver is a word list tool that allows the user to input hints and a list of all the possible words will appear." name="description">
@@ -11,47 +12,15 @@
 
   <!-- External Links -->
   <link href='./favicon.ico' rel='shortcut icon' type='image/x-icon'>
-  <link href="assets/style.css" rel="stylesheet">
+  <link href="assets/style.css" preload rel="stylesheet">
 
   <!-- Scripts -->
-  <script src="./assets/jquery-3.6.0.min.js"></script>
-  <script src="./wordlist/wordlist.js"></script>
+  <script src="./assets/jquery-3.6.0.min.js" preload> </script>
+  <script src="./wordlist/wordlist.js" defer ></script>
+
 </head>
-
 <body>
-
-  <!--NAV BAR-->
-  <section class="navbar">
-    <div class="nav-container">
-      <div class="brand">
-        <a class="navtext" href="."><img src="./favicon.ico" alt="Guess the Build Solver Icon"></a>
-        <a class="navtext" href=".">GTB Solver</a>
-      </div>
-      <div class="nav-links">
-        <li id="home-btn">
-          <a class="navtext" href=".">Home</a>
-        </li>
-        <li id="usage-btn">
-          <a class="navtext" href="#usage">Usage</a>
-        </li>
-        <li id="about-btn">
-          <a class="navtext" href="#about">About</a>
-        </li>
-      </div>
-    </div>
-  </section>
-
-  <div class="solver">
-
-    <form>
-      <input id="input" name="username" placeholder="Start entering hints here..." type="text">
-    </form>
-    <div class="char_count">
-      <p>You currently have <span id="count">0</span> characters.</p>
-    </div>
-    <div class="result" id="result"></div>
-  
-  
+  <!-- MODALS -->
   <div class="modal" id="usage-modal">
     <div class="modal-content">
       <div class="modal-header">
@@ -80,13 +49,37 @@
           This solver is a word list cheat for all the themes in Guess The Build on Hypixel. <br> <br>
           At 90 seconds, hints are given out to all players. <br> <br>
           If you input this hint into the textbox, the solver will return a list of all the possible words. <br> <br>
-          This website is licenced under AGPL-3.0 and is available <a href="https://github.com/vojkovic/GTB-Solver">here</a>.<br><br>
-          If a word is not on the list, open an issue <a href="https://github.com/vojkovic/GTB-Solver/issues">here</a>.<br>
+          This website is licenced under AGPL-3.0 and is available <a href="https://github.com/vojkovic/GTB-Solver">in this GitHub repository</a>.<br><br>
+          If a word is not on the list, open an <a href="https://github.com/vojkovic/GTB-Solver/issues">issue here</a> and I will add it.<br>
         </ul>
       </div>
     </div>
   </div>
 
-  <script type="text/javascript" src="assets/script.js"></script>
+<!--NAV BAR-->
+  <ul class="nav">
+    <li id="home-btn">
+      <a class="navtext" href=".">Home</a>
+    </li>
+    <li id="usage-btn">
+      <a class="navtext" href="#usage">Usage</a>
+    </li>
+    <li id="about-btn">
+      <a class="navtext" href="#about">About</a>
+    </li>
+  </ul> 
+
+<!--MAIN CONTENT-->
+  <form>
+    <input id="input" name="username" placeholder="Start entering hints here..." type="text">
+  </form>
+
+  <div class="char_count">
+    <p >You currently have <span id="count">0</span> characters.</p>
+  </div>
+
+  <div class="result" id="result"></div>
+
+<script type="text/javascript" src="assets/script.js" async> </script>
 </body>
 </html>

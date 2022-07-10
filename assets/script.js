@@ -28,7 +28,7 @@ $(document).ready(function () {
 
                 }
                 if (i == searchWord.length)
-                  $("#result").append(value + '<br>');
+                  $("#result").append(value + '<br>' + '<br>');
               }
             }
           }
