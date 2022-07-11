@@ -9,5 +9,5 @@ https://gtb.vojkovic.xyz
 - You can add onto the words in wordlist/wordlist.js (words from the end of the submissions.txt aren't added yet)
 
 ## Run with docker:
-`docker run -i --restart unless-stopped -p 5000:80 vojkovic/gtb`
+`docker run -i --restart unless-stopped --name 'GTB-Solver' -p 5000:80 vojkovic/gtb`
 
