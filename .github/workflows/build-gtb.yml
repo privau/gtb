@@ -1,10 +1,7 @@
-name: build-gtb
+name: Docker Build
 
 on:
   push:
-    branches:
-      - master
-      - docker
 
 jobs:
   build:
