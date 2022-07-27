@@ -1,6 +1,6 @@
 # GTB-Solver
 ## Production:
-https://gtb.vojkovic.xyz
+https://gtb.priv.au
 
 ## To Use This Offline:
 - Download the source code.
