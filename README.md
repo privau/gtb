@@ -11,3 +11,4 @@ https://gtb.priv.au
 ## Run with docker:
 `docker run -i --restart always --name 'GTB-Solver' -p 127.0.0.1:5000:80 vojkovic/gtb`
 
+The Solver will now be run on port 5000.
