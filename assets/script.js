@@ -2,28 +2,29 @@ const wordsArray = arrayData;
 const result = document.querySelector("#result");
 
 function handleKeyUp(event, username) {
-  const words = event.target.value.replace(/_/g, '.').toLowerCase();
-  try {
-    const reg = new RegExp(words.replace(/_./g, '[^.\s]'));
-    result.innerHTML = '';
-    for (j = 0; j < wordsArray.length; j++) {
-      const value = wordsArray[j].toLowerCase();
-      if (reg.test(value) && words.length === value.length) {
-        let isMatch = true;
-        for (i = 0; i < words.length; i++) {
-          if (words[i] == '.') continue;
-          if (words[i] != value[i]) {
-            isMatch = false;
-            break;
-          }
+  const words = event.target.value.toLowerCase();
+  const pattern = words.replace(/_/g, '\\S');
+  const reg = new RegExp(pattern);
+
+  result.innerHTML = '';
+  for (let j = 0; j < wordsArray.length; j++) {
+    const value = wordsArray[j].toLowerCase();
+    if (reg.test(value) && words.length === value.length) {
+      let isMatch = true;
+      for (let i = 0; i < words.length; i++) {
+        if (words[i] === '_' && value[i] === ' ') {
+          isMatch = false;
+          break;
         }
-        if (isMatch) {
-          result.innerHTML += wordsArray[j] + '<br><br>';
+        if (words[i] !== '_' && words[i] !== value[i]) {
+          isMatch = false;
+          break;
         }
       }
+      if (isMatch) {
+        result.innerHTML += wordsArray[j] + '<br><br>';
+      }
     }
-  } catch (e) {
-    console.error(e); // Log any regular expression errors
   }
 }
 
